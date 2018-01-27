@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171217075711) do
+ActiveRecord::Schema.define(version: 20180127223111) do
 
   create_table "locations", force: :cascade do |t|
     t.float "longitude"
@@ -18,6 +18,16 @@ ActiveRecord::Schema.define(version: 20171217075711) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+  end
+
+  create_table "trips", force: :cascade do |t|
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.decimal "start_latitude", precision: 10, scale: 6
+    t.decimal "start_longitude", precision: 10, scale: 6
+    t.string "destination"
+    t.index ["user_id"], name: "index_trips_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

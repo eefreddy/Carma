@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 
-  has_many :locations
+  has_many :locations, :trips
 
   attr_accessor :remember_token
   before_save { email.downcase! }
