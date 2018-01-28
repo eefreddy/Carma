@@ -10,10 +10,11 @@
   </aside>
   <div class="col-md-8">
     <% if @user.trips.any? %>
-        <h3>Trips (<%= @user.trip.count %>)</h3>
-        <ol class="microposts">
+        <h3>trips (<%= @user.trips.count %>)</h3>
+        <ol class="trips">
           <%= render @trips %>
         </ol>
+        <%= will_paginate @trips %>
     <% end %>
   </div>
 </div>

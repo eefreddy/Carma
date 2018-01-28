@@ -1,6 +1,8 @@
 <div class="center jumbotron">
   <h1>Carma</h1>
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  <% unless logged_in? %>
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  <% end %>
 </div>
 
 <% if logged_in? %>
@@ -9,7 +11,7 @@
         <section class="user_info">
           <%= render 'shared/user_info' %>
         </section>
-        <section class="micropost_form">
+        <section class="trip_form">
           <%= render 'shared/trip_form' %>
         </section>
       </aside>
