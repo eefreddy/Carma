@@ -1,7 +1,7 @@
 class User < ApplicationRecord
 
   # has_many :locations
-  has_many :trips
+  has_many :trips, dependent: :destroy
 
   attr_accessor :remember_token
   before_save { email.downcase! }

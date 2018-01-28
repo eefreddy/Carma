@@ -22,6 +22,7 @@ gem 'gmaps4rails'
 gem 'pry'
 gem 'pry-doc'
 gem 'underscore-rails'
+gem 'faker',          '1.7.3'
 
 
 

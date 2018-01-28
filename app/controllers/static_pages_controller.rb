@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
+    @trip = current_user.trips.build if logged_in?
   end
 
   def help
@@ -10,4 +11,5 @@ class StaticPagesController < ApplicationController
 
   def contact
   end
+
 end

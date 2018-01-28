@@ -1,15 +1,25 @@
 <div class="center jumbotron">
   <h1>Carma</h1>
-
-  <h2>
-
-  </h2>
-
   <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
 </div>
+
+<% if logged_in? %>
+    <div class="row">
+      <aside class="col-md-4">
+        <section class="user_info">
+          <%= render 'shared/user_info' %>
+        </section>
+        <section class="micropost_form">
+          <%= render 'shared/trip_form' %>
+        </section>
+      </aside>
+    </div>
+<% else %>
 
 <div class="center jumbotron">
   <div class="fill">
   <%= image_tag "carma_logo.png", size: "720x350"%>
   </div>
 </div>
+
+<% end %>
