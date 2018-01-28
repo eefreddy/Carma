@@ -8,6 +8,7 @@ class StaticPagesController < ApplicationController
   end
 
   def about
+    @trip = current_user.trips.build if logged_in?
   end
 
   def driver

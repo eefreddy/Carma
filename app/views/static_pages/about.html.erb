@@ -1,6 +1,13 @@
 <%	 provide( :title, "About") %>
 
 <h1>About</h1>
-<p>
-  Under Construction! Come back in a couple of weeks
-</p>
+
+<%= form_for(@trip) do |f| %>
+    <div class="field">
+      <%= f.text_area :start_location, placeholder: "Enter Destination..." %>
+    </div>
+    <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>
+
+<%= @trip.start_latitude %>
+<%= @trip.start_longitude %>
