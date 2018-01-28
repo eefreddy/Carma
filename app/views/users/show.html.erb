@@ -7,10 +7,30 @@
         <%= @user.name %>
       </h1>
     </section>
-    <section class="user_location">
-        <h1>
-          <%= link_to "Share Location", locations_path, class: "btn btn-lg btn-primary" %>
-        </h1>
+
+    <p id="demo">Where are you off to?</p>
+
+    <section class="trip_info">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+
+          <%= form_for(Trip) do |f| %>
+            <%= render 'shared/error_messages' %>
+
+            <%= f.label :destination %>
+            <%= f.text_field :destination, class: 'form-control' %>
+
+            <%= f.submit "Let's Go!", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
     </section>
+
+
+    <!--<section class="user_location">-->
+        <!--<h1>-->
+          <!--<#%= link_to "Share Location", trips_path, class: "btn btn-lg btn-primary" %>-->
+        <!--</h1>-->
+    <!--</section>-->
   </aside>
 </div>
