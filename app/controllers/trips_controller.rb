@@ -17,6 +17,6 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    params.require(:trip).permit(:destination)
+    params.require(:trip).permit(:destination, :start_location, :start_latitude, :start_longitude)
   end
 end

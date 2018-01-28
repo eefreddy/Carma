@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180128150652) do
+ActiveRecord::Schema.define(version: 20180128165351) do
 
   create_table "locations", force: :cascade do |t|
     t.float "longitude"
@@ -27,6 +27,9 @@ ActiveRecord::Schema.define(version: 20180128150652) do
     t.decimal "start_latitude", precision: 10, scale: 6
     t.decimal "start_longitude", precision: 10, scale: 6
     t.string "destination"
+    t.string "start_location"
+    t.float "end_latitude"
+    t.float "end_longitude"
     t.index ["user_id"], name: "index_trips_on_user_id"
   end
 
