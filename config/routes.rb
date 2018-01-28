@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get  '/login',   to: 'sessions#new'
   post '/login',   to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+  get '/request_ride',   to: 'trips#request_ride'
+  get '/ride_completed',   to: 'trips#ride_completed'
 
   resources :users
   resources :trips, only: [:create, :destroy]

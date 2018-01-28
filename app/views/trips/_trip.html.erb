@@ -4,5 +4,8 @@
   <span class="destination"><%= trip.destination %></span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(trip.created_at) %> ago.
+    <% unless (trip.user == current_user) %>
+      <%= link_to '<button type="button"> Request Ride! </button>'.html_safe, request_ride_path(update_karma_user_id: trip.user) %>
+    <% end %>
   </span>
 </li>

@@ -14,6 +14,16 @@ class TripsController < ApplicationController
   def destroy
   end
 
+  def request_ride
+    @update_karma_user = User.find(params[:update_karma_user_id])
+  end
+
+  def ride_completed
+    @update_karma_points = User.find(params[:update_user_points])
+    increase = @update_karma_points.karma_points + 1
+    @update_karma_points.update_attribute(:karma_points, increase)
+  end
+
   private
 
   def trip_params

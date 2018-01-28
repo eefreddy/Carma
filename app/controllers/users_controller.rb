@@ -20,6 +20,10 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
+
+  def has_karma_points?
+    return false if current_user.karma_points.nil?
+  end
   private
 
   def user_params
