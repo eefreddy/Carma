@@ -213,12 +213,20 @@
       <Position>8</Position>
       <DataType>int|0</DataType>
     </column>
-    <index id="57" parent="12" name="index_users_on_email">
+    <column id="57" parent="12" name="lat">
+      <Position>9</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="58" parent="12" name="long">
+      <Position>10</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <index id="59" parent="12" name="index_users_on_email">
       <ColNames>email</ColNames>
       <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
-    <key id="58" parent="12">
+    <key id="60" parent="12">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>

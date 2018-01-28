@@ -3,6 +3,11 @@ class User < ApplicationRecord
   # has_many :locations
   has_many :trips, dependent: :destroy
 
+
+  geocoded_by :current_location, :latitude  => :lat, :longitude => :long
+
+  after_validation :geocode
+
   attr_accessor :remember_token
   before_save { email.downcase! }
   validates :name, presence: true, length: { maximum: 50}
