@@ -3,6 +3,8 @@ class StaticPagesController < ApplicationController
   end
 
   def rider
+    trip_not_me = Trip.where.not(:user_id => current_user.id)
+    @trips = trip_not_me.where('created_at >= ?', 20.minutes.ago).paginate(page: params[:page])
   end
 
   def about
