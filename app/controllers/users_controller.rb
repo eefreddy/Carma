@@ -21,12 +21,19 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    curr_loc = params[:user][:current_location]
+    current_user.update_attribute(:current_location, curr_loc)
+    flash[:success] = "Current Location saved!"
+    redirect_to root_url
+  end
+
   def has_karma_points?
     return false if current_user.karma_points.nil?
   end
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :location)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :current_location)
   end
 end

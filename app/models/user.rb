@@ -3,6 +3,9 @@ class User < ApplicationRecord
   # has_many :locations
   has_many :trips, dependent: :destroy
 
+
+  geocoded_by :current_location, :latitude  => :lat, :longitude => :long
+
   attr_accessor :remember_token
   before_save { email.downcase! }
   validates :name, presence: true, length: { maximum: 50}
@@ -12,6 +15,8 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
+
+  after_validation :geocode
 
   # Returns the hash digest of the given string.
   def User.digest(string)
