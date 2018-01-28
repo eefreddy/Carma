@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180127223111) do
+ActiveRecord::Schema.define(version: 20180128150652) do
 
   create_table "locations", force: :cascade do |t|
     t.float "longitude"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20180127223111) do
     t.string "password_digest"
     t.string "remember_digest"
     t.boolean "admin", default: false
+    t.integer "karma_points"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
