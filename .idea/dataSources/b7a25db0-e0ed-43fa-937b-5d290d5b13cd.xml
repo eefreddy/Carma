@@ -221,12 +221,16 @@
       <Position>10</Position>
       <DataType>float|0</DataType>
     </column>
-    <index id="59" parent="12" name="index_users_on_email">
+    <column id="59" parent="12" name="current_location">
+      <Position>11</Position>
+      <DataType>varchar|0</DataType>
+    </column>
+    <index id="60" parent="12" name="index_users_on_email">
       <ColNames>email</ColNames>
       <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
-    <key id="60" parent="12">
+    <key id="61" parent="12">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>

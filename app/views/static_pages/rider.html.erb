@@ -5,7 +5,14 @@
   Let's find you a ride!
 </p>
 
-<form_for @
+<%= form_for(@user) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="field">
+      <%= f.text_area :current_location, placeholder: "Enter your location..." %>
+    </div>
+    <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>
+
 <ol class="trips">
   <%= render @trips %>
 </ol>
