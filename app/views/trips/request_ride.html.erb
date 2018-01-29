@@ -1,5 +1,5 @@
 <% provide(:title, 'Ride Requested!') %>
-<% unless current_user.karma_points.nil? %>
+<% unless current_user.karma_points < 1 %>
   <h1>You have requested a ride!</h1>
   <div><a>Let us know when you have completed your ride!</a>
     <a><%= link_to '<button type="button"> Ride completed! </button>'.html_safe, ride_completed_path(update_user_points: @update_karma_user) %></a>

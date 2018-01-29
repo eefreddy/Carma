@@ -29,7 +29,7 @@ class UsersController < ApplicationController
   end
 
   def has_karma_points?
-    return false if current_user.karma_points.nil?
+    return false if current_user.karma_points.nil? | current_user.karma_points < 1
   end
   private
 
