@@ -1,24 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project was made for HackED 2018. It serves as mvp for a karma based carpooling app with 2 flows: rider and driver. Once you give a ride to someone, you get a karma point enabling you to switch to rider mode and use that point to catch a ride when you're in need. 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Truly, what goes around comes around.
